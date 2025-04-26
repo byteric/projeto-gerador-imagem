@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - IAmager</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1><span class="logo">IA</span>mager</h1>
+        <nav class="navegacao">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gerar.html">Gerar</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html" class="active">Contato</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <section id="contact">
+            <h2>Entre em Contato</h2>
+            <p>Tem alguma dúvida, sugestão ou precisa de suporte? Entre em contato conosco!</p>
+
+            <div class="info-contato">
+                <h3>Informações de Contato:</h3>
+                <ul>
+                    <li><strong>Email:</strong> <a href="mailto:ricardoseverianodesouzafilho@gmail.com">ricardoseverianodesouzafilho@gmail.com</a></li>
+                    <li><strong>Telefone:</strong> <a href="tel:+5581993848840">(81) 99384-8840</a></li>
+            </div>
+
+            <div class="formulario-contato">
+                <h3>Envie uma Mensagem:</h3>
+                <form class="formulario-estilizado">
+                    <div class="grupo-formulario">
+                        <label for="nome">Nome:</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="grupo-formulario">
+                        <label for="mensagem">Mensagem:</label>
+                        <textarea id="mensagem" name="mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="botao-enviar">Enviar Mensagem</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 IAmager - Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

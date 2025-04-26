@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerar Imagem - IAmager</title>
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="cabecalho">
+        <h1><span class="logo">IA</span>mager</h1>
+        <nav class="navegacao">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gerar.html" class="active">Gerar</a></li>
+                <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
+                <li><a href="login.html" class="login-btn">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="principal">
+        <section id="gerar">
+            <h2>Gere sua Imagem com IA</h2>
+            <p class="subtitulo">Digite o que você quer imaginar e veja a mágica acontecer.</p>
+            <div class="container-entrada">
+                <input type="text" id="prompt" placeholder="Digite o que você quer imaginar...">
+                <button id="generate-btn" class="botao-gerar">Gerar Imagem</button>
+            </div>
+            <div id="saida-imagem">
+                </div>
+        </section>
+    </main>
+
+    <footer class="rodape">
+        <p>&copy; 2025 IAmager - Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const generateBtn = document.getElementById('generate-btn');
+        const promptInput = document.getElementById('prompt');
+        const imageOutput = document.getElementById('saida-imagem');
+
+        generateBtn.addEventListener('click', () => {
+            const promptText = promptInput.value.trim();
+            if (promptText) {
+                imageOutput.innerHTML = '<p>Gerando imagem com a descrição: "' + promptText + '"...</p>';
+                setTimeout(() => {
+                    const imageUrl = 'placeholder_gerada.jpg'; // Simulação de URL da imagem gerada
+                    imageOutput.innerHTML = `<img src="${imageUrl}" alt="Imagem Gerada pela IA">`;
+                }, 2000); // Simula um tempo de geração de 2 segundos
+            } else {
+                imageOutput.innerHTML = '<p class="mensagem-erro">Por favor, digite uma descrição para gerar a imagem.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

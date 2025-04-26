@@ -4,50 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar - IAmager</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
+    <header class="cabecalho">
         <h1><span class="logo">IA</span>mager</h1>
-        <nav>
+        <nav class="navegacao">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="gerar.html">Gerar</a></li>
                 <li><a href="galeria.html">Galeria</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
                 <li><a href="login.html" class="login-btn">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="form-container">
+    <main class="principal">
+        <section id="container-formulario">
             <h2>Crie sua conta</h2>
-            <form class="styled-form">
-                <div class="form-group">
+            <form class="formulario-estilizado">
+                <div class="grupo-formulario">
                     <label for="nome">Nome:</label>
                     <input type="text" id="nome" name="nome" required>
                 </div>
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="password">Senha:</label>
                     <input type="password" id="password" name="password" required>
                 </div>
-                <div class="form-group">
+                <div class="grupo-formulario">
                     <label for="confirm-password">Confirmar Senha:</label>
                     <input type="password" id="confirm-password" name="confirm-password" required>
                 </div>
-                <button type="submit" class="submit-btn">Cadastrar</button>
-                <p class="form-link">Já tem uma conta? <a href="login.html">Faça login</a></p>
+                <button type="submit" class="botao-enviar">Cadastrar</button>
+                <p class="link-formulario">Já tem uma conta? <a href="login.html">Faça login</a></p>
             </form>
         </section>
     </main>
 
-    <footer>
+    <footer class="rodape">
         <p>&copy; 2025 IAmager - Todos os direitos reservados.</p>
     </footer>
 </body>

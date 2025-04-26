@@ -1,132 +1,97 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galeria - IAmager</title>
-    <link rel="stylesheet" href="estilos/style.css">
+    <link rel="stylesheet" href="estilos/estilo.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-    <header>
+    <header class="cabecalho">
         <h1><span class="logo">IA</span>mager</h1>
-        <nav>
+        <nav class="navegacao">
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="gerar.html">Gerar</a></li>
                 <li><a href="galeria.html" class="active">Galeria</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+                <li><a href="contato.html">Contato</a></li>
                 <li><a href="login.html" class="login-btn">Login</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section id="examples">
+    <main class="principal">
+        <section id="galeria">
             <h2>Sua Galeria de Criações com IA</h2>
-            <p class="section-subtitle">Explore as imagens incríveis que você e outros usuários geraram com o poder da
-                nossa inteligência artificial.</p>
-            <div class="examples-grid">
-                <div class="example-item">
+            <p class="secao-subtitulo">Explore as imagens incríveis que você e outros usuários geraram com o poder da nossa inteligência artificial.</p>
+            <div class="grade-exemplos">
+                <div class="item-exemplo">
                     <img src="assets/sol.jfif" alt="Imagem Gerada 1">
-                    <p class="prompt-text">Uma paisagem serena ao pôr do sol.</p>
+                    <p class="texto-prompt">Uma paisagem serena ao pôr do sol.</p>
                 </div>
-                <div class="example-item">
+                <div class="item-exemplo">
                     <img src="assets/urbano.jfif" alt="Imagem Gerada 2">
-                    <p class="prompt-text">Um personagem de ficção científica em um ambiente urbano.</p>
+                    <p class="texto-prompt">Um personagem de ficção científica em um ambiente urbano.</p>
                 </div>
-                <div class="example-item">
+                <div class="item-exemplo">
                     <img src="assets/magica.jfif" alt="Imagem Gerada 3">
-                    <p class="prompt-text">Uma criatura fantástica em um mundo mágico.</p>
+                    <p class="texto-prompt">Uma criatura fantástica em um mundo mágico.</p>
                 </div>
-                <div class="example-item">
+                <div class="item-exemplo">
                     <img src="assets/carro.jfif" alt="Imagem Gerada 4">
-                    <p class="prompt-text">Um carro esportivo futurista correndo em alta velocidade.</p>
+                    <p class="texto-prompt">Um carro esportivo futurista correndo em alta velocidade.</p>
                 </div>
-                <div class="example-item">
+                <div class="item-exemplo">
                     <img src="assets/natureza.jfif" alt="Imagem Gerada 5">
-                    <p class="prompt-text">Uma natureza morta com elementos surreais.</p>
+                    <p class="texto-prompt">Uma natureza morta com elementos surreais.</p>
                 </div>
-                <div class="example-item">
+                <div class="item-exemplo">
                     <img src="assets/historia.jfif" alt="Imagem Gerada 6">
-                    <p class="prompt-text">Um retrato estilizado de uma figura histórica.</p>
+                    <p class="texto-prompt">Um retrato estilizado de uma figura histórica.</p>
                 </div>
-            </div>
-            <p class="empty-gallery-message" style="display: none;">Sua galeria está vazia. Comece a criar!</p>
+                </div>
+            <p class="mensagem-galeria-vazia" style="display: none;">Sua galeria está vazia. Comece a criar!</p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 IAmager - Todos os direitos reservados.</p>
-    </footer>
-
-    <div id="fullscreen-overlay">
-        <span id="close-button" onclick="closeFullscreen()">X</span>
-        <img id="fullscreen-image">
+    <div id="overlay-tela-cheia">
+        <span id="botao-fechar" onclick="fecharFullscreen()">X</span>
+        <img id="imagem-tela-cheia">
     </div>
 
-    <style>
-        #fullscreen-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.9);
-            display: none;
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
-
-        #close-button {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #fff;
-            font-size: 2em;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 1001;
-            /* Garante que o botão fique acima da imagem */
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
-        }
-
-        #fullscreen-image {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-    </style>
-
     <script>
-        const galleryItems = document.querySelectorAll('.example-item');
-        const fullscreenOverlay = document.getElementById('fullscreen-overlay');
-        const fullscreenImage = document.getElementById('fullscreen-image');
-        const closeButton = document.getElementById('close-button');
+        const galleryItems = document.querySelectorAll('.item-exemplo');
+        const fullscreenOverlay = document.getElementById('overlay-tela-cheia');
+        const fullscreenImage = document.getElementById('imagem-tela-cheia');
+        const closeButton = document.getElementById('botao-fechar');
 
         galleryItems.forEach(item => {
             item.addEventListener('click', () => {
                 const imageUrl = item.querySelector('img').src;
                 fullscreenImage.src = imageUrl;
                 fullscreenOverlay.style.display = 'flex';
-                document.body.style.overflow = 'hidden'; 
+                document.body.style.overflow = 'hidden';
             });
         });
 
-        function closeFullscreen() {
+        function fecharFullscreen() {
             fullscreenOverlay.style.display = 'none';
-            document.body.style.overflow = 'auto'; 
+            document.body.style.overflow = 'auto';
         }
 
         fullscreenOverlay.addEventListener('click', (event) => {
             if (event.target === fullscreenOverlay) {
-                closeFullscreen();
+                fecharFullscreen();
             }
         });
     </script>
-</body>
 
+    <footer class="rodape">
+        <p>&copy; 2025 IAmager - Todos os direitos reservados.</p>
+    </footer>
+</body>
 </html>
